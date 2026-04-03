@@ -15,3 +15,5 @@ def cars_view(request):
     {'cars': cars}
   )
 
+def new_car_view(request):
+  
