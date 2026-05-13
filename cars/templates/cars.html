@@ -102,7 +102,11 @@
     {% if cars %}
       {% for car in cars %}
         <div class="car-card">
-          <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}">
+          {% if car.photo %}
+            <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}">
+          {% else %}
+            <img src="https://via.placeholder.com/300x200?text=Sem+Foto" alt="Sem foto disponível">
+          {% endif %}
           <h2>{{ car.brand }} {{ car.model }}</h2>
           <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
         </div>
